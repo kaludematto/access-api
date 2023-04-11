@@ -1,7 +1,7 @@
 import morgan, { StreamOptions } from 'morgan';
 import { Request, Response } from 'express';
-import { applicationConfig } from '@/config';
 import { logger } from './logger';
+import { applicationConfig } from '@/config/application';
 
 const morganFormat = applicationConfig.env == 'development' ? 'tiny' : 'common';
 const stream: StreamOptions = {
