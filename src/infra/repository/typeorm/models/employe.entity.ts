@@ -22,10 +22,34 @@ export class Employe implements IEmploye {
     document!: string;
 
     @Column({ nullable: true })
+    picture!: string;
+
+    @Column({ nullable: true })
     email!: string;
 
     @Column({ nullable: true })
     phone!: string;
+
+    @Column({ nullable: true })
+    address!: string;
+
+    @Column({ nullable: true })
+    city!: string;
+
+    @Column({ nullable: true })
+    state!: string;
+
+    @Column({ nullable: true })
+    country!: string;
+
+    @Column({ nullable: true })
+    cep!: string;
+
+    @Column({ nullable: true })
+    job!: string;
+
+    @Column({ nullable: true })
+    company!: string;
 
     @Column({ nullable: true })
     active!: boolean;
