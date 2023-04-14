@@ -9,8 +9,12 @@
     "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "lint": "eslint . --ext .ts",
-    "lint-fix": "eslint . --ext .ts --fix"
-  },
+    "lint-fix": "eslint . --ext .ts --fix",
+    "typeorm": "ts-node-dev -r dotenv/config tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm:sync": "npm run typeorm schema:sync",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:create": "npm run typeorm migration:create -- -n"
+},
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.13",
