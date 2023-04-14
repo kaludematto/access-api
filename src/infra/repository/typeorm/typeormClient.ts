@@ -1,6 +1,9 @@
 import { databaseConfig } from '../../../config/database';
 import { DataSource } from 'typeorm';
 import { Employe } from './models/employe.entity';
+import { Visitor } from './models/visitor.entity';
+import { User } from './models/user.entity';
+import { Company } from './models/company.entity';
 
 export const dataSource = new DataSource({
     type: 'postgres',
@@ -9,9 +12,10 @@ export const dataSource = new DataSource({
     username: databaseConfig.user,
     password: databaseConfig.password,
     database: databaseConfig.name,
-    entities: [Employe],
+    entities: [Employe, Visitor, User, Company],
     synchronize: false,
     migrations: [`${__dirname}/migrations/**/*{.ts,.js}`],
+    migrationsTableName: 'custom_migration_table',
     logging: true,
 });
 
