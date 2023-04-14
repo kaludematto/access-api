@@ -1,7 +1,8 @@
+import 'reflect-metadata';
+import 'express-async-errors';
+import './shared/enviroment/dotenv';
 import { applicationConfig } from './config/application';
 import { logger } from './shared/logger/logger';
-import './shared/enviroment/dotenv';
-import 'express-async-errors';
 import { dataSource } from './infra/repository/typeorm/typeormClient';
 import http from 'http';
 
