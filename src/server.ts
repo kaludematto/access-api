@@ -1,19 +1,24 @@
-import express from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
 import { applicationConfig } from './config/application';
 import { logger } from './shared/logger/logger';
 import './shared/enviroment/dotenv';
 import 'express-async-errors';
+import { dataSource } from './infra/repository/typeorm/typeormClient';
+import http from 'http';
 
-const app = express();
+dataSource
+    .initialize()
+    .then(async () => {
+        logger.info(`Database Access-API success connect!`);
 
-app.use(cors());
-app.use(helmet());
+        const app = (await import('./config/app')).default;
+        const server: http.Server = http.createServer(app);
 
-app.listen(applicationConfig.port, () => {
-    logger.info({
-        label: 'server',
-        message: `Server running on port ${applicationConfig.port}`,
+        server.listen(applicationConfig.port, () =>
+            logger.info(
+                `Server is running in the port ${applicationConfig.port}!`,
+            ),
+        );
+    })
+    .catch(error => {
+        logger.error('Error starting application!', error);
     });
-});
