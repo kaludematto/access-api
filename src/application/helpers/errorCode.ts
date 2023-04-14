@@ -1,0 +1,4 @@
+export enum ErrorCode {
+    INVALID_DOCUMENT = 'INVALID_DOCUMENT',
+    INVALID_ACCESS = 'INVALID_ACCESS',
+}
