@@ -2,7 +2,7 @@ import winston, { format } from 'winston';
 import { LoggingWinston } from '@google-cloud/logging-winston';
 import TransportStream from 'winston-transport';
 import { customColors } from './custom-colors';
-import { applicationConfig } from '@/config/application';
+import { applicationConfig } from '../../config/application';
 
 const { combine, splat, label, timestamp, colorize } = format;
 
