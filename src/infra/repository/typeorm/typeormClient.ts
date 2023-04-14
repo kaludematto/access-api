@@ -13,10 +13,11 @@ export const dataSource = new DataSource({
     password: databaseConfig.password,
     database: databaseConfig.name,
     entities: [Employe, Visitor, User, Company],
-    synchronize: false,
+    synchronize: true,
     migrations: [`${__dirname}/migrations/**/*{.ts,.js}`],
     migrationsTableName: 'custom_migration_table',
-    logging: true,
+    logging: 'all',
+    uuidExtension: 'uuid-ossp',
 });
 
 dataSource
