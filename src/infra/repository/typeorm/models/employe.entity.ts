@@ -16,9 +16,6 @@ export class Employe implements IEmploye {
     name!: string;
 
     @Column({ nullable: true })
-    password!: string;
-
-    @Column({ nullable: true })
     document!: string;
 
     @Column({ nullable: true })

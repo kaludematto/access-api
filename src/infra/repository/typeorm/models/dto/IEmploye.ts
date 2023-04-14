@@ -1,6 +1,5 @@
 export interface IEmploye {
     name: string;
-    password: string;
     document: string;
     picture: string;
     email: string;
