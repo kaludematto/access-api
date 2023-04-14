@@ -1,14 +1,14 @@
 import {
-    Entity,
-    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
+    Entity,
+    PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { IEmploye } from './dto/IEmploye';
+import { IVisitor } from './dto/IVisitor';
 
 @Entity()
-export class Employe implements IEmploye {
+export class Visitor implements IVisitor {
     @PrimaryGeneratedColumn()
     id?: number | undefined;
 
@@ -16,13 +16,10 @@ export class Employe implements IEmploye {
     name!: string;
 
     @Column({ nullable: true })
-    password!: string;
+    address!: string;
 
     @Column({ nullable: true })
     document!: string;
-
-    @Column({ nullable: true })
-    picture!: string;
 
     @Column({ nullable: true })
     email!: string;
@@ -31,28 +28,28 @@ export class Employe implements IEmploye {
     phone!: string;
 
     @Column({ nullable: true })
-    address!: string;
+    floor_to_visit!: string;
 
     @Column({ nullable: true })
-    city!: string;
-
-    @Column({ nullable: true })
-    state!: string;
-
-    @Column({ nullable: true })
-    country!: string;
-
-    @Column({ nullable: true })
-    cep!: string;
-
-    @Column({ nullable: true })
-    job!: string;
+    room_number!: string;
 
     @Column({ nullable: true })
     company!: string;
 
     @Column({ nullable: true })
-    active!: boolean;
+    picture!: string;
+
+    @Column({ nullable: true })
+    reason!: string;
+
+    @Column({ nullable: true })
+    auth!: string;
+
+    @Column({ nullable: true })
+    approver!: string;
+
+    @Column({ nullable: true })
+    permission_time!: string;
 
     @CreateDateColumn()
     created_at?: Date | undefined;
