@@ -5,9 +5,9 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { IEmploye } from './dto/IEmploye';
+import { IEmploye } from '../../dto/IEmploye';
 
-@Entity()
+@Entity('employers')
 export class Employe implements IEmploye {
     @PrimaryGeneratedColumn()
     id?: number | undefined;

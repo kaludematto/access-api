@@ -5,9 +5,9 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { IUser } from './dto/IUser';
+import { IUser } from '../../dto/IUser';
 
-@Entity()
+@Entity('users')
 export class User implements IUser {
     @PrimaryGeneratedColumn()
     id?: number | undefined;

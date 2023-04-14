@@ -5,9 +5,9 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { IVisitor } from './dto/IVisitor';
+import { IVisitor } from '../../dto/IVisitor';
 
-@Entity()
+@Entity('visitors')
 export class Visitor implements IVisitor {
     @PrimaryGeneratedColumn()
     id?: number | undefined;

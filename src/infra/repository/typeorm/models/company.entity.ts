@@ -5,32 +5,32 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { ICompany } from './dto/ICompany';
+import { ICompany } from '../../dto/ICompany';
 
-@Entity()
+@Entity('company')
 export class Company implements ICompany {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     id?: number | undefined;
 
-    @Column({ nullable: true })
+    @Column()
     company_name!: string;
 
-    @Column({ nullable: true })
+    @Column()
     cnpj!: number;
 
-    @Column({ nullable: true })
+    @Column()
     phone!: string;
 
-    @Column({ nullable: true })
+    @Column()
     email!: string;
 
-    @Column({ nullable: true })
+    @Column()
     floor!: string;
 
-    @Column({ nullable: true })
+    @Column()
     room!: string;
 
-    @Column({ nullable: true })
+    @Column()
     responsable!: string;
 
     @CreateDateColumn()
