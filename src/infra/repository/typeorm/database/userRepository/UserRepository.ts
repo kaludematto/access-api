@@ -2,9 +2,9 @@ import { Repository } from 'typeorm';
 import { IUserRepository } from './IUserRepository';
 import { User } from '../../models/user.entity';
 import { dataSource } from '../../typeormClient';
-import { IUser } from '@/infra/repository/dto/IUser';
 import { injectable } from 'tsyringe';
-import { NotFound } from '@/shared/errors/dto/NotFound';
+import { IUser, IUserToCreate } from '../../../dto/IUser';
+import { NotFound } from '../../../../../shared/errors/dto/NotFound';
 
 @injectable()
 export class UserRepository implements IUserRepository {
@@ -13,7 +13,7 @@ export class UserRepository implements IUserRepository {
     constructor() {
         this.userRepository = dataSource.getRepository(User);
     }
-    public async create(objectToCreate: IUser): Promise<IUser> {
+    public async create(objectToCreate: IUserToCreate): Promise<IUser> {
         const result = await this.userRepository.save(objectToCreate);
         return result;
     }

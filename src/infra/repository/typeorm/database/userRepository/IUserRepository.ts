@@ -1,4 +1,4 @@
-import { IUser } from '@/infra/repository/dto/IUser';
+import { IUser } from '../../../dto/IUser';
 
 export interface IUserRepository {
     create(objectToCreate: IUser): Promise<IUser>;

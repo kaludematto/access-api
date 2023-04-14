@@ -1,6 +1,9 @@
 import 'reflect-metadata';
 import 'express-async-errors';
 import './shared/enviroment/dotenv';
+import './utils/module-alias';
+import './infra/repository/typeorm/typeormClient';
+import './infra/container';
 import { applicationConfig } from './config/application';
 import { logger } from './shared/logger/logger';
 import { dataSource } from './infra/repository/typeorm/typeormClient';

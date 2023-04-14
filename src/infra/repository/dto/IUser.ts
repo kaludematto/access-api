@@ -9,3 +9,14 @@ export interface IUser {
     can_approve: boolean;
     auth: string;
 }
+
+export interface IUserToCreate {
+    name: string;
+    email: string;
+    password: string;
+    document: string;
+    picture: string;
+    phone: string;
+    job: string;
+    can_approve: boolean;
+}
