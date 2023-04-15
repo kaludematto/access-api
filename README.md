@@ -5,8 +5,10 @@ Access-API is developed to be a Access Control to any Place
 ![App Screenshot](https://www.curtamais.com.br/uploads/conteudos/718e7961322171b09065beab588293c7.jpg)
 ## Features
 
-- Register Employe who will manage the application
+- Register Users
+- Register Employes
 - Register Persons 
+- Register Company
 - Generate or reade QR Codes
 - Register Locals
 - Register the access
