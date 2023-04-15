@@ -10,9 +10,8 @@ export class GetUserController implements Controller {
         private getUserUseCase: IGetUserUseCase,
     ) {}
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
-        const id = httpRequest.query;
-        const email = httpRequest.query;
-        const result = await this.getUserUseCase.execute(id, email);
+        const { userEmail } = httpRequest.query;
+        const result = await this.getUserUseCase.execute(userEmail);
         return ok(result);
     }
 }

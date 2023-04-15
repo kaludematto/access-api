@@ -40,4 +40,13 @@ export class UserRepository implements IUserRepository {
         }
         await this.userRepository.remove(user);
     }
+
+    public async findByEmail(userEmail: string): Promise<IUser | null> {
+        const user = await this.userRepository.findOne({
+            where: {
+                email: userEmail,
+            },
+        });
+        return user;
+    }
 }

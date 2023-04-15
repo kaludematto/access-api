@@ -11,8 +11,8 @@ export class GetUserUseCase implements IGetUserUseCase {
         private readonly userRepository: UserRepository,
     ) {}
 
-    async execute(id: string, email: string): Promise<IUser | null> {
-        const user = await this.userRepository.findUser(id, email);
+    async execute(userEmail: string): Promise<IUser | null> {
+        const user = await this.userRepository.findByEmail(userEmail);
         if (!user) {
             throw new NotFound(`Usuário não encontrado`);
         }
