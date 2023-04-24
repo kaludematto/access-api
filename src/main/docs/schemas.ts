@@ -2,10 +2,12 @@ import {
     createUserParamsSchema,
     createUserResponseSchema,
     errorSchema,
-} from './schemas/index';
+    getUserResponse,
+} from './schemas/';
 
 export default {
     createUserParamsSchema,
     createUserResponseSchema,
     errorSchema,
+    getUserResponse,
 };
