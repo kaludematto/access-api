@@ -5,7 +5,7 @@ export const getUser = {
         parameters: [
             {
                 in: 'query',
-                description: 'User Email',
+                description: 'userEmail',
                 name: 'email',
                 required: true,
             },
