@@ -31,5 +31,9 @@ export class CreateUserRequestDTO {
 
     @IsDefined()
     @IsNotEmpty()
-    can_approve!: string;
+    can_approve!: boolean;
+
+    @IsDefined()
+    @IsNotEmpty()
+    admin!: boolean;
 }
