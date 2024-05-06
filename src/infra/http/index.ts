@@ -19,6 +19,14 @@ async function httpGet<T>({ url, options, origin }: THttpInput) {
     }
 }
 
+async function httpPut<T>({ url, options, origin }: THttpInput) {
+    try {
+        return await httpService.put<T>(url, options);
+    } catch (error) {
+        logger.error(error);
+    }
+}
+
 type THttpInput = {
     url: string;
     options?: object;
@@ -26,4 +34,4 @@ type THttpInput = {
     origin?: string;
 };
 
-export { httpPost, httpGet };
+export { httpPost, httpGet, httpPut };
