@@ -5,14 +5,16 @@ import { dataSource } from '../../typeormClient';
 import { injectable } from 'tsyringe';
 import { IUser, IUserToCreate } from '../../../dto/IUser';
 import { NotFound } from '../../../../../shared/errors/dto/NotFound';
+import { TUserToUpdate } from '@/application/useCase/userUseCase/updateUser/TUpdateUserUseCase';
 
 @injectable()
 export class UserRepository implements IUserRepository {
-    userRepository: Repository<User>;
+    private userRepository: Repository<User>;
 
     constructor() {
         this.userRepository = dataSource.getRepository(User);
     }
+
     public async create(objectToCreate: IUserToCreate): Promise<IUser> {
         const result = await this.userRepository.save(objectToCreate);
         return result;
@@ -48,5 +50,22 @@ export class UserRepository implements IUserRepository {
             },
         });
         return user;
+    }
+    public async findById(id: number): Promise<IUser | null> {
+        const userFound = await this.userRepository.findOne({
+            where: {
+                id: id,
+            },
+        });
+        return userFound;
+    }
+
+    public async updateUser(
+        id: number,
+        user: TUserToUpdate,
+    ): Promise<IUser | null> {
+        await this.userRepository.update(id, user);
+        const userUpdated = await this.findById(id);
+        return userUpdated;
     }
 }

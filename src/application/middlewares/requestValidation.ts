@@ -48,6 +48,7 @@ export const validateDTO = (requestToValidate: RequestValidate) => {
         }
 
         if (allErrors.length > 0) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             //@ts-ignore
             throw new PayloadError(allErrors);
         } else {

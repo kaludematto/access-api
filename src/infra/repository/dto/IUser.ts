@@ -1,4 +1,5 @@
 export interface IUser {
+    id?: number;
     name: string;
     email: string;
     password: string;
@@ -7,6 +8,7 @@ export interface IUser {
     phone: string;
     job: string;
     can_approve: boolean;
+    admin: boolean;
     auth: string;
 }
 
@@ -19,4 +21,5 @@ export interface IUserToCreate {
     phone: string;
     job: string;
     can_approve: boolean;
+    admin: boolean;
 }

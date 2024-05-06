@@ -37,6 +37,9 @@ export class User implements IUser {
     can_approve!: boolean;
 
     @Column({ nullable: true })
+    admin!: boolean;
+
+    @Column({ nullable: true })
     auth!: string;
 
     @CreateDateColumn()

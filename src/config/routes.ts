@@ -1,4 +1,8 @@
-import { createUserRoute, getUserRoute } from '../application/routes';
+import {
+    createUserRoute,
+    getUserRoute,
+    updateUserRoute,
+} from '../application/routes';
 import { Express, Router } from 'express';
 
 export default function setupRoutes(app: Express): void {
@@ -6,5 +10,6 @@ export default function setupRoutes(app: Express): void {
     router.use('/access-api/', router);
     router.use(createUserRoute);
     router.use(getUserRoute);
+    router.use(updateUserRoute);
     app.use(router);
 }
